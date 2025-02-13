@@ -2,9 +2,9 @@
 """
 handle session authentication
 """
-import base64 import b64decode
-import uuid import uuid4
-from typing import Optional, Tuple, TypeVar
+import base64
+import uuid
+from typing import Optional, TypeVar
 from models.user import User
 from api.v1.auth.auth import Auth
 

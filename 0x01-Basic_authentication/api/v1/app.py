@@ -32,7 +32,8 @@ def before_request() -> Optional[str]:
     """
     before request
     """
-    allowed_paths = ['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/']
+    allowed_paths = ['/api/v1/status/', '/api/v1/unauthorized/',
+                     '/api/v1/forbidden/']
 
     if auth is None:
         return

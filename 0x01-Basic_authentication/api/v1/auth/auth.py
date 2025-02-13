@@ -26,7 +26,6 @@ class Auth:
             return False
         return False
 
-
     def authorization_header(self, request=None) -> Optional[str]:
         '''
         Returns the value of the Authorization header or None
@@ -34,7 +33,6 @@ class Auth:
         if request is None or 'Authorization' not in request.headers:
             return None
         return request.headers.get('Authorization')
-
 
     def current_user(self, request=None) -> None:
         '''TypeVar('User'):
@@ -51,4 +49,5 @@ if __name__ == '__main__':
     print(a.require_auth("/api/v1/status/", ["/api/v1/status/"]))
     print(a.require_auth("/api/v1/status", ["/api/v1/status/"]))
     print(a.require_auth("/api/v1/users", ["/api/v1/status/"]))
-    print(a.require_auth("/api/v1/users", ["/api/v1/status/", "/api/v1/stats"]))
+    print(a.require_auth("/api/v1/users", ["/api/v1/status/",
+                            "/api/v1/stats"]))

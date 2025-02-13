@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-
+'''
+file auth.py
+'''
 from typing import List, TypeVar
 from flask import Flask, request
 
@@ -18,7 +20,6 @@ class Auth:
         if path is None or excluded_paths is None or not excluded_paths:
             return True
 
-        # handle * at end of excluded paths
         if path[-1] == '/':
             path = path[:-1]
 

@@ -4,6 +4,7 @@ file auth.py
 '''
 from typing import List, TypeVar, Optional
 from flask import Flask, request
+import os
 
 
 class Auth:
@@ -63,6 +64,17 @@ class Auth:
          Current User
         request = Flask(__name__)'''
         return
+
+    def session_cookie(self, request=None):
+        '''
+        session cookie
+        '''
+        if request is None:
+            return None
+        session_name = os.getenv("SESSION_NAME")
+        if session_name is None:
+            return None
+        return request.cookies.get(session_name)
 
 
 if __name__ == '__main__':

@@ -50,7 +50,6 @@ class Auth:
 
         return True
 
-
     def authorization_header(self, request=None) -> Optional[str]:
         '''
         Returns the value of the Authorization header or None

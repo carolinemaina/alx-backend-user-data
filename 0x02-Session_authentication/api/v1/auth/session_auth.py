@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-handle session auth
+handle session authentication
 """
 import base64 import b64decode
 import uuid import uuid4
@@ -16,7 +16,8 @@ class SessionAuth(Auth):
     user_id_by_session_id = {}
 
     def create_session(self, user_id: str = None) -> Optional[str]:
-        """Creates a session id for the user.
+        """
+        Creates a session id for the user.
         """
         if not user_id or not isinstance(user_id, str):
             return

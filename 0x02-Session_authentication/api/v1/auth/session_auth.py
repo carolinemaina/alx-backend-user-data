@@ -4,7 +4,7 @@ handle session authentication
 """
 import base64
 import uuid
-from typing import Optional, TypeVar
+from typing import TypeVar
 from models.user import User
 from api.v1.auth.auth import Auth
 
@@ -15,12 +15,12 @@ class SessionAuth(Auth):
     """
     user_id_by_session_id = {}
 
-    def create_session(self, user_id: str = None) -> Optional[str]:
+    def create_session(self, user_id: str = None) -> str:
         """
         Creates a session id for the user.
         """
         if not user_id or not isinstance(user_id, str):
-            return
+            return None
         session_id = str(uuid4())
         self.user_id_by_session_id[session_id] = user_id
         return session_id

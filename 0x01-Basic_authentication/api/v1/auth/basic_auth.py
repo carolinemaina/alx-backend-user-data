@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""handle basic auth"""
+"""handle basic auth
 import base64
-from typing import Tuple, TypeVar
+from typing import Tuple, TypeVar"""
 from api.v1.auth.auth import Auth
-from models.user import User
+'''from models.user import User'''
 
 
 class BasicAuth(Auth):
@@ -14,7 +14,7 @@ class BasicAuth(Auth):
         Auth (class): Parent authentication class
     """
 
-    def extract_base64_authorization_header(
+'''    def extract_base64_authorization_header(
             self,
             authorization_header: str
             ) -> str:
@@ -99,4 +99,5 @@ class BasicAuth(Auth):
             email, password = self.extract_user_credentials(decoded)
             return self.user_object_from_credentials(email, password)
         except Exception:
-            return None
+            return None'''
+        pass

@@ -40,6 +40,7 @@ class Auth:
         request = Flask(__name__)'''
         return
 
+
 if __name__ == '__main__':
     a = Auth()
 
@@ -50,4 +51,4 @@ if __name__ == '__main__':
     print(a.require_auth("/api/v1/status", ["/api/v1/status/"]))
     print(a.require_auth("/api/v1/users", ["/api/v1/status/"]))
     print(a.require_auth("/api/v1/users", ["/api/v1/status/",
-                            "/api/v1/stats"]))
+                         "/api/v1/stats"]))
